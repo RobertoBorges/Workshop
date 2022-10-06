@@ -1,2 +1,8 @@
 Humongous.Healthcare/obj/*
+Humongous.Healthcare/bin/*
+Humongous.Healthcare/runtimes/*
+Humongous.Healthcare.Web/obj/*
+Humongous.Healthcare.Web/bin/*
+Humongous.Healthcare.Web/runtimes/*
 .vscode/*
+
