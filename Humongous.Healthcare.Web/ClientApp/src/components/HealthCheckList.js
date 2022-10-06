@@ -47,7 +47,6 @@ export class HealthCheckList extends Component {
                         <th>Patient Id</th>
                         <th>Date</th>
                         <th>Status</th>
-                        <th>Symptoms</th>
                     </tr>
                 </thead>
                 <tbody>

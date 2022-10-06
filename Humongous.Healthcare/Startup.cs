@@ -32,6 +32,16 @@ namespace Humongous.Healthcare
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Humongous.Healthcare", Version = "v1" });
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "_all",
+                    policy =>
+                {
+                    policy.WithHeaders("*");
+                    policy.AllowAnyMethod();
+                    policy.WithOrigins("*");
+                });
+            });
             services.AddSingleton<ICosmosDbService>(InitializeCosmosClientInstanceAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
         }
 
@@ -47,6 +57,8 @@ namespace Humongous.Healthcare
 
             app.UseRouting();
 
+            app.UseCors("_all");
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

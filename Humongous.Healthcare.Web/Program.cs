@@ -4,6 +4,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "_all",
+        policy =>
+        {
+            policy.WithOrigins("*");
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

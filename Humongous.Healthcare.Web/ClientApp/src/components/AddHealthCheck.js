@@ -10,8 +10,7 @@ export class AddHealthCheck extends Component {
             id: '',
             patientid: '',
             date: '',
-            healthstatus: '',
-            symptoms: []
+            healthstatus: ''
         };
     }
 
